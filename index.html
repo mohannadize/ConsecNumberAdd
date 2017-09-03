@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ConsecNumberAdd</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+		    -webkit-appearance: none;
+		    margin: 0;
+		}
+
+		input[type="number"] {
+		    -moz-appearance: textfield;
+		}
+		label {
+			width: 40px;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<h2>Add all integers From # to # (Inclusive)</h2>
+	<form onsubmit="return calcAddi()" action="javascript:void(0)">
+		<label for="start">Start:</label>
+		<input type="number" name="start" value=""><br><br>
+		<label for="end">End:</label>
+		<input type="number" name="end" value="">
+		<br><br>
+		<input type="submit" value="Calculate">
+	</form>
+	<br>
+	<p id="result"></p>
+	<script type="text/javascript">
+		function calcAddi() {
+			var n1 = document.querySelector("input[name=start]").value;
+			var n2 = document.querySelector("input[name=end]").value;
+			if (n1 == "") {
+				n1 = 0;
+			}
+			if (n2 == "") {
+				n2 = 0;
+			}
+			n1 = parseFloat(n1);
+			n2 = parseFloat(n2);
+			var ans = ((n2 + n1)*(n2-n1)/2)+((n2+n1)/2);
+			document.querySelector("#result").innerHTML = ans;
+		}
+	</script>
+</body>
+</html>
